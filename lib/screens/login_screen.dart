@@ -84,8 +84,11 @@ class _LoginPageState extends State<LoginPage> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
-                          onTap: () {
-                            // Add your code to handle the "Forgot Password?" button click
+                          onTap: (
+                            
+                          ) {
+                            Navigator.pushReplacementNamed(
+                                  context, '/resetp');
                           },
                           child: Text(
                             'Forgot Password?',

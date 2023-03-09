@@ -129,7 +129,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
                           splashColor: Colors.amber,
-                          // onTap: () => movetoHome(context),
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/verify');
+                          },
                           child: Container(
                             width: 150,
                             height: 40,
@@ -142,13 +144,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
-                      // ElevatedButton(
-                      //   child: Text("Login"),
-                      //   onPressed: () {
-                      //     Navigator.pushNamed(context, MyRoutes.HomeRoute);
-                      //   },
-                      //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                      // )
                       SizedBox(
                         height: 20,
                       ),
@@ -170,7 +165,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       SizedBox(
                         height: 20,
                       ),
-
                       Image.asset("assets/images/gg.png"),
                       SizedBox(
                         height: 20,
