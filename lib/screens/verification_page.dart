@@ -67,8 +67,9 @@ class _VerifyPageState extends State<VerifyPage> {
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
-                          splashColor: Colors.amber,
-                          // onTap: () => movetoHome(context),
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/loc');
+                          },
                           child: Container(
                             width: 150,
                             height: 40,

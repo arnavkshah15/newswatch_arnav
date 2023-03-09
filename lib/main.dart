@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newswatch_arnav/screens/location_screen.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
 import 'package:newswatch_arnav/screens/reset_pass_screen.dart';
 import 'package:newswatch_arnav/screens/signup_screen.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.grey,
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => SignUpPage(),
         '/resetp': (context) => ResetPage(),
         '/verify': (context) => VerifyPage(),
+        '/loc': (context) => LocationPage(title: 'City Search'),
+        // '/home':(context) => HomePage(), 
       },
     );
   }
