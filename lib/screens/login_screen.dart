@@ -84,11 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
-                          onTap: (
-                            
-                          ) {
-                            Navigator.pushReplacementNamed(
-                                  context, '/resetp');
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/resetp');
                           },
                           child: Text(
                             'Forgot Password?',
@@ -106,7 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
                           splashColor: Colors.amber,
-                          // onTap: () => movetoHome(context),
+                          onTap: () =>
+                              Navigator.pushReplacementNamed(context, '/home'),
                           child: Container(
                             width: 150,
                             height: 40,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newswatch_arnav/screens/home.dart';
 import 'package:newswatch_arnav/screens/location_screen.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
 import 'package:newswatch_arnav/screens/reset_pass_screen.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         '/resetp': (context) => ResetPage(),
         '/verify': (context) => VerifyPage(),
         '/loc': (context) => LocationPage(title: 'City Search'),
-        // '/home':(context) => HomePage(), 
+        '/home':(context) => HomePage(), 
       },
     );
   }

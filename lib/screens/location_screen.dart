@@ -125,7 +125,7 @@ class _LocationPageState extends State<LocationPage> {
               borderRadius: BorderRadius.circular(20),
               child: InkWell(
                 onTap: () {
-                  // Navigator.pushReplacementNamed(context, '');
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: Container(
                     width: 150,
