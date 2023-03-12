@@ -82,7 +82,9 @@ class _ResetPageState extends State<ResetPage> {
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
-                          // onTap: () => movetoHome(context),
+                          onTap: () {
+                            Navigator.pushReplacementNamed(context, '/home');
+                          },
                           child: Container(
                             width: 150,
                             height: 40,
