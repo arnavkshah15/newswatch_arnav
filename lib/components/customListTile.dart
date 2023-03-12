@@ -62,11 +62,14 @@ Widget customListTile(Article article, BuildContext context) {
                   ),
                 ),
           SizedBox(height: 8.0),
-          Text(
-            article.title ?? '',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16.0,
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              article.title ?? '',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,
+              ),
             ),
           ),
           SizedBox(height: 8.0),
@@ -80,7 +83,7 @@ Widget customListTile(Article article, BuildContext context) {
                   borderRadius: BorderRadius.circular(30.0),
                 ),
                 child: Text(
-                  article.source?.name ?? 'Unknown',
+                  article.author ?? 'Unknown',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 10,
@@ -94,6 +97,17 @@ Widget customListTile(Article article, BuildContext context) {
               )
             ],
           ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              article.description ?? '',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 10.0,
+              ),
+            ),
+          ),
+          SizedBox(height: 8.0),
           Row(
             children: [
               IconButton(

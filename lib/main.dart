@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newswatch_arnav/screens/Ads_page.dart';
+import 'package:newswatch_arnav/screens/Poll_page.dart';
 import 'package:newswatch_arnav/screens/addpost_screen.dart';
 import 'package:newswatch_arnav/screens/home.dart';
 import 'package:newswatch_arnav/screens/location_screen.dart';
@@ -36,6 +38,8 @@ class MyApp extends StatelessWidget {
         '/home':(context) => HomePage(), 
         '/post':(context) => AddPostPage(),
         '/setting':(context) => SettingsPage(),
+        '/ads':(context) => AdsPage(),
+        '/poll':(context) => PollPage()
       },
     );
   }

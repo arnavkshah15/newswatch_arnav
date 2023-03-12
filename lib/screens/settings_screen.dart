@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newswatch_arnav/screens/Ads_page.dart';
+import 'package:newswatch_arnav/screens/Poll_page.dart';
 import 'package:newswatch_arnav/screens/addpost_screen.dart';
 import 'package:newswatch_arnav/screens/home.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
@@ -29,24 +31,24 @@ class _SettingsPageState extends State<SettingsPage> {
           MaterialPageRoute(builder: (context) => HomePage()),
         );
         break;
-      // case 1:
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => LoginPage()),
-      //   );
-      //   break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AdsPage()),
+        );
+        break;
       case 2:
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => AddPostPage()),
         );
         break;
-      // case 3:
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => PollPage()),
-      //   );
-      //   break;
+      case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PollPage()),
+        );
+        break;
       case 4:
         Navigator.push(
           context,

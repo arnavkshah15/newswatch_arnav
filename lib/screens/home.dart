@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:newswatch_arnav/components/customListTile.dart';
 import 'package:newswatch_arnav/model/article_model.dart';
+import 'package:newswatch_arnav/screens/Ads_page.dart';
+import 'package:newswatch_arnav/screens/Poll_page.dart';
 import 'package:newswatch_arnav/screens/addpost_screen.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
 import 'package:newswatch_arnav/screens/settings_screen.dart';
@@ -17,6 +19,45 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final categor = [
+    Tab(
+      child: Text(
+        'Popular',
+        style: TextStyle(fontSize: 10),
+      ),
+    ),
+    Tab(
+      child: Text(
+        'Business',
+        style: TextStyle(fontSize: 10),
+      ),
+    ),
+    Tab(
+      child: Text(
+        'Tech',
+        style: TextStyle(fontSize: 10),
+      ),
+    ),
+    Tab(
+      child: Text(
+        'Health',
+        style: TextStyle(fontSize: 10),
+      ),
+    ),
+    Tab(
+      child: Text(
+        'Science',
+        style: TextStyle(fontSize: 10),
+      ),
+    ),
+  ];
+  final List<String> categories = [
+    'general',
+    'business',
+    'technology',
+    'health',
+    'science'
+  ];
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Home'),
@@ -37,24 +78,24 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => HomePage()),
         );
         break;
-      // case 1:
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => LoginPage()),
-      //   );
-      // break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AdsPage()),
+        );
+      break;
       case 2:
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => AddPostPage()),
         );
         break;
-      // case 3:
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => PollPage()),
-      //   );
-      //   break;
+      case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PollPage()),
+        );
+        break;
       case 4:
         Navigator.push(
           context,
@@ -70,92 +111,96 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          leading: Builder(
-            builder: (BuildContext context) {
-              return IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Colors.blue.shade400,
-                ),
-                onPressed: () {
-                  // Scaffold.of(context).openDrawer();
-                },
-                // tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-              );
-            },
-          ),
-          title: Row(
-            children: [
-              Icon(Icons.location_on),
-              Text("G.T Road, Kolkata",
-                  style: TextStyle(color: Colors.black, fontSize: 12)),
-              Icon(
-                Icons.keyboard_arrow_down_rounded,
-                size: 15,
+    return DefaultTabController(
+      length: categories.length,
+      child: Scaffold(
+        appBar: AppBar(
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.blue.shade400,
+                  ),
+                  onPressed: () {
+                    // Scaffold.of(context).openDrawer();
+                  },
+                  // tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                );
+              },
+            ),
+            title: Row(
+              children: [
+                Icon(Icons.location_on),
+                Text("G.T Road, Kolkata",
+                    style: TextStyle(color: Colors.black, fontSize: 12)),
+                Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  size: 15,
+                )
+              ],
+            ),
+            actions: [
+              Row(
+                children: [
+                  Material(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                    child: InkWell(
+                      onTap: () {
+                        // Navigator.pushReplacementNamed(context, '/home');
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.grey.shade400,
+                              width: 1,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          width: 70,
+                          height: 40,
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Icon(Icons.stars_rounded, color: Colors.amber),
+                              Text(
+                                "599",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 15,
+                  ),
+                  Icon(
+                    Icons.notifications,
+                    color: Colors.lightBlue.shade400,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 25,
+                  ),
+                ],
               )
             ],
-          ),
-          actions: [
-            Row(
-              children: [
-                Material(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  child: InkWell(
-                    onTap: () {
-                      // Navigator.pushReplacementNamed(context, '/home');
-                    },
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey.shade400,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        width: 70,
-                        height: 40,
-                        alignment: Alignment.center,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Icon(Icons.stars_rounded, color: Colors.amber),
-                            Text(
-                              "599",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        )),
-                  ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 15,
-                ),
-                Icon(
-                  Icons.notifications,
-                  color: Colors.lightBlue.shade400,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 25,
-                ),
-              ],
-            )
-          ],
-          backgroundColor: Colors.white),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height -
-                  145, // add a fixed height constraint here
-              child: FutureBuilder(
-                future: client.getArticle(),
+            bottom: TabBar(
+              indicatorColor: Colors.lightBlue.shade400,
+              indicatorWeight: 2.0,
+              indicatorSize: TabBarIndicatorSize.label,
+              tabs: categor,
+            ),
+            backgroundColor: Colors.white),
+        body: TabBarView(
+          children: categories.map((category) {
+            return FutureBuilder(
+                future: client.getArticlesByCategory(category),
                 builder: (BuildContext context,
                     AsyncSnapshot<List<Article>> snapshot) {
                   if (snapshot.hasData) {
@@ -164,43 +209,49 @@ class _HomePageState extends State<HomePage> {
                         itemCount: articles.length,
                         itemBuilder: (context, index) =>
                             customListTile(articles[index], context));
+                  } else if (snapshot.hasError) {
+                    return Text('Failed to load articles');
                   }
                   return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                },
-              ),
+                      child: SizedBox(
+                          width: 48.0,
+                          height: 48.0,
+                          child: CircularProgressIndicator()));
+                });
+          }).toList(),
+        ),
+        bottomNavigationBar: Stack(
+          children: [
+            BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.auto_awesome_motion_outlined),
+                  label: 'Ads',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.add),
+                  label: 'Add Post',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.poll),
+                  label: 'Poll',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_2_sharp),
+                  label: 'Profile',
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              selectedItemColor: Colors.blue,
+              onTap: _onItemTapped,
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.ad_units),
-            label: 'Ads',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Add Post',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.poll),
-            label: 'Poll',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        onTap: _onItemTapped,
       ),
     );
   }

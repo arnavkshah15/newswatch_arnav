@@ -6,11 +6,11 @@ class ApiService {
   final endPointUrl = "newsapi.org";
   final client = http.Client();
 
-  Future<List<Article>> getArticle() async {
+  Future<List<Article>> getArticlesByCategory(String category) async {
     final queryParameters = {
       'country': 'us',
       'source': 'bbc-news',
-      'category': 'technology',
+      'category': category,
       'apiKey': '69e6e514545149d482118d36e07bed8c'
     };
 
