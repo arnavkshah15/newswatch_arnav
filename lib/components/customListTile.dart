@@ -31,10 +31,24 @@ Widget customListTile(Article article, BuildContext context) {
                   height: 200.0,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
+                      borderRadius: BorderRadius.circular(12.0),
+                      image: DecorationImage(
                         image: NetworkImage(article.urlToImage!),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(12.0),
+                        fit: BoxFit.cover,
+                      )),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: 'assets/images/load.jpg',
+                    image: article.urlToImage!,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: 200.0,
+                    fadeInDuration: const Duration(milliseconds: 500),
+                    fadeOutDuration: const Duration(milliseconds: 500),
+                    imageErrorBuilder: (BuildContext context, Object exception,
+                        StackTrace? stackTrace) {
+                      return Image.asset('assets/images/load.jpg',
+                          fit: BoxFit.cover);
+                    },
                   ),
                 )
               : Container(
@@ -42,8 +56,7 @@ Widget customListTile(Article article, BuildContext context) {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            'https://source.unsplash.com/weekly?coding'),
+                        image: AssetImage('assets/images/news.jpg'),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(12.0),
                   ),

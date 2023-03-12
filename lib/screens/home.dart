@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:newswatch_arnav/components/customListTile.dart';
 import 'package:newswatch_arnav/model/article_model.dart';
+import 'package:newswatch_arnav/screens/addpost_screen.dart';
+import 'package:newswatch_arnav/screens/login_screen.dart';
+import 'package:newswatch_arnav/screens/settings_screen.dart';
 import 'package:newswatch_arnav/services/api_services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:newswatch_arnav/screens/article_detail.dart';
@@ -14,6 +17,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text('Home'),
+    Text('Ads'),
+    Text('Add Post'),
+    Text('Poll'),
+    Text('Profile'),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AddPostPage()),
+        );
+        break;
+      // case 3:
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => PollPage()),
+      //   );
+      //   break;
+      case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SettingsPage()),
+        );
+        break;
+      default:
+        break;
+    }
+  }
+
   ApiService client = ApiService();
 
   @override
@@ -96,29 +148,59 @@ class _HomePageState extends State<HomePage> {
             )
           ],
           backgroundColor: Colors.white),
-      body: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height -
-                89, // add a fixed height constraint here
-            child: FutureBuilder(
-              future: client.getArticle(),
-              builder: (BuildContext context,
-                  AsyncSnapshot<List<Article>> snapshot) {
-                if (snapshot.hasData) {
-                  List<Article> articles = snapshot.requireData;
-                  return ListView.builder(
-                      itemCount: articles.length,
-                      itemBuilder: (context, index) =>
-                          customListTile(articles[index], context));
-                }
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              },
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height -
+                  145, // add a fixed height constraint here
+              child: FutureBuilder(
+                future: client.getArticle(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<Article>> snapshot) {
+                  if (snapshot.hasData) {
+                    List<Article> articles = snapshot.requireData;
+                    return ListView.builder(
+                        itemCount: articles.length,
+                        itemBuilder: (context, index) =>
+                            customListTile(articles[index], context));
+                  }
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+              ),
             ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ad_units),
+            label: 'Ads',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: 'Add Post',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.poll),
+            label: 'Poll',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
     );
   }

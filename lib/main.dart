@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:newswatch_arnav/screens/addpost_screen.dart';
 import 'package:newswatch_arnav/screens/home.dart';
 import 'package:newswatch_arnav/screens/location_screen.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
 import 'package:newswatch_arnav/screens/reset_pass_screen.dart';
+import 'package:newswatch_arnav/screens/settings_screen.dart';
 import 'package:newswatch_arnav/screens/signup_screen.dart';
 import 'package:newswatch_arnav/screens/splash_screen.dart';
 import 'package:newswatch_arnav/screens/verification_page.dart';
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
         '/verify': (context) => VerifyPage(),
         '/loc': (context) => LocationPage(title: 'City Search'),
         '/home':(context) => HomePage(), 
+        '/post':(context) => AddPostPage(),
+        '/setting':(context) => SettingsPage(),
       },
     );
   }

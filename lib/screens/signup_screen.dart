@@ -128,7 +128,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
-                          splashColor: Colors.amber,
                           onTap: () {
                             Navigator.pushReplacementNamed(context, '/verify');
                           },

@@ -102,7 +102,6 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
-                          splashColor: Colors.amber,
                           onTap: () =>
                               Navigator.pushReplacementNamed(context, '/home'),
                           child: Container(

@@ -82,7 +82,6 @@ class _ResetPageState extends State<ResetPage> {
                         color: Colors.lightBlue,
                         borderRadius: BorderRadius.circular(20),
                         child: InkWell(
-                          splashColor: Colors.amber,
                           // onTap: () => movetoHome(context),
                           child: Container(
                             width: 150,
