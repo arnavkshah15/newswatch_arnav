@@ -32,12 +32,12 @@ class _AddPostPageState extends State<AddPostPage> {
           MaterialPageRoute(builder: (context) => HomePage()),
         );
         break;
-      case 1:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AddPostPage()),
-        );
-        break;
+      // case 1:
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => AddPostPage()),
+      //   );
+      //   break;
       // case 2:
       //   Navigator.push(
       //     context,

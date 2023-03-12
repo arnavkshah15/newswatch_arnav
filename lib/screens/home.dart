@@ -37,12 +37,12 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => HomePage()),
         );
         break;
-      case 1:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LoginPage()),
-        );
-        break;
+      // case 1:
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => LoginPage()),
+      //   );
+      // break;
       case 2:
         Navigator.push(
           context,
