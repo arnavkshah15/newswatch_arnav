@@ -17,7 +17,7 @@ class ApiService {
     final uri = Uri.https(endPointUrl, '/v2/top-headlines', queryParameters);
     final response = await client.get(uri);
     Map<String, dynamic> json = jsonDecode(response.body);
-    List<dynamic> body = json['articles'];
+    List<dynamic> body = json['articles']?? [];
     List<Article> articles =
         await body.map((dynamic item) => Article.fromJson(item)).toList();
     return articles;

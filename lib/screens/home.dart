@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
           context,
           MaterialPageRoute(builder: (context) => AdsPage()),
         );
-      break;
+        break;
       case 2:
         Navigator.push(
           context,
@@ -119,11 +119,11 @@ class _HomePageState extends State<HomePage> {
               builder: (BuildContext context) {
                 return IconButton(
                   icon: Icon(
-                    Icons.menu,
+                    Icons.search,
                     color: Colors.blue.shade400,
                   ),
                   onPressed: () {
-                    // Scaffold.of(context).openDrawer();
+                    Navigator.pushReplacementNamed(context, '/search');
                   },
                   // tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
                 );
