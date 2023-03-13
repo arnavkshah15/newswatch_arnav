@@ -36,12 +36,12 @@ class MyApp extends StatelessWidget {
         '/resetp': (context) => ResetPage(),
         '/verify': (context) => VerifyPage(),
         '/loc': (context) => LocationPage(title: 'City Search'),
-        '/home':(context) => HomePage(), 
-        '/post':(context) => AddPostPage(),
-        '/setting':(context) => SettingsPage(),
-        '/ads':(context) => AdsPage(),
-        '/poll':(context) => PollPage(),
-        '/search':(context) => SearchPage(),
+        '/home': (context) => HomePage(),
+        '/post': (context) => AddPostPage(),
+        '/setting': (context) => SettingsPage(),
+        '/ads': (context) => AdsPage(),
+        '/poll': (context) => PollPage(),
+        '/search': (context) => SearchPage(),
       },
     );
   }

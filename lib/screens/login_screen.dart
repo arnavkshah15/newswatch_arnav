@@ -13,20 +13,6 @@ class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
   bool _obscureText = true;
 
-  // movetoHome(BuildContext context) async {
-  //   if (_formkey.currentState!.validate()) {
-  //     setState(() {
-  //       change = true;
-  //     });
-  //     await Future.delayed(Duration(seconds: 1));
-  //     await Navigator.pushNamed(context, MyRoutes.HomeRoute);
-
-  //     setState(() {
-  //       change = false;
-  //     });
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -126,20 +112,24 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(
                         height: 50,
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            height: 1,
-                            width: MediaQuery.of(context).size.width / 3.5,
-                            color: Colors.black,
-                          ),
-                          Text("  or sign in with  "),
-                          Container(
-                            height: 1,
-                            width: MediaQuery.of(context).size.width / 3.5,
-                            color: Colors.black,
-                          )
-                        ],
+                      Container(
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 1,
+                              width: MediaQuery.of(context).size.width / 3.5,
+                              color: Colors.black,
+                            ),
+                            Text("  or sign in with  "),
+                            Container(
+                              height: 1,
+                              width: MediaQuery.of(context).size.width / 3.5,
+                              color: Colors.black,
+                            )
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 50,
@@ -150,11 +140,11 @@ class _LoginPageState extends State<LoginPage> {
                         height: 20,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width / 7,
+                          Text(
+                            "Don't Have an account? ",
                           ),
-                          Text("Don't Have an account? "),
                           GestureDetector(
                             onTap: () {
                               Navigator.pushReplacementNamed(
