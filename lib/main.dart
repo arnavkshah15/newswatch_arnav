@@ -5,6 +5,7 @@ import 'package:newswatch_arnav/screens/addpost_screen.dart';
 import 'package:newswatch_arnav/screens/home.dart';
 import 'package:newswatch_arnav/screens/location_screen.dart';
 import 'package:newswatch_arnav/screens/login_screen.dart';
+import 'package:newswatch_arnav/screens/profile_page.dart';
 import 'package:newswatch_arnav/screens/reset_pass_screen.dart';
 import 'package:newswatch_arnav/screens/search_screen.dart';
 import 'package:newswatch_arnav/screens/settings_screen.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/ads': (context) => AdsPage(),
         '/poll': (context) => PollPage(),
         '/search': (context) => SearchPage(),
+        '/profile':(context) => ProfilePage(),
       },
     );
   }

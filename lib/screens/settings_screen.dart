@@ -87,7 +87,7 @@ class _SettingsPageState extends State<SettingsPage> {
             title: Text('Profile'),
             trailing: Icon(Icons.arrow_forward_ios),
             onTap: () {
-              // TODO: Navigate to profile page
+              Navigator.pushReplacementNamed(context, '/profile');
             },
           ),
           SizedBox(height: 5),
