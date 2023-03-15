@@ -95,81 +95,63 @@ class _SettingsPageState extends State<SettingsPage> {
             leading: Icon(Icons.account_balance_wallet),
             title: Text('My Wallet'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to wallet page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.post_add),
             trailing: Icon(Icons.arrow_forward_ios),
             title: Text('My Posts'),
-            onTap: () {
-              // TODO: Navigate to posts page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.thumb_up),
             title: Text('Boost Your Post'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to boost post page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.notifications),
             title: Text('Notification'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to notification page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.privacy_tip),
             title: Text('Terms and Conditions'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to terms and conditions page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.info),
             title: Text('About'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to about page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.monetization_on),
             title: Text('Watch Ads & Earn'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to watch ads page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.people),
             title: Text('Refer and Earn'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Navigate to refer and earn page
-            },
+            onTap: () {},
           ),
           SizedBox(height: 5),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('Log Out'),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: () {
-              // TODO: Log out user
-            },
+            onTap: () {},
           ),
         ],
       ),

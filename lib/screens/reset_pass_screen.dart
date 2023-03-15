@@ -10,23 +10,9 @@ class ResetPage extends StatefulWidget {
 class _ResetPageState extends State<ResetPage> {
   String name = "";
   bool change = false;
-  final _formkey = GlobalKey<FormState>();
+  
   bool _obscureText = true;
   int selected = 1;
-
-  // movetoHome(BuildContext context) async {
-  //   if (_formkey.currentState!.validate()) {
-  //     setState(() {
-  //       change = true;
-  //     });
-  //     await Future.delayed(Duration(seconds: 1));
-  //     await Navigator.pushNamed(context, MyRoutes.HomeRoute);
-
-  //     setState(() {
-  //       change = false;
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +20,6 @@ class _ResetPageState extends State<ResetPage> {
         color: Colors.white,
         child: SingleChildScrollView(
           child: Form(
-            key: _formkey,
             child: Column(
               children: [
                 SizedBox(

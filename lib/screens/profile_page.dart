@@ -150,6 +150,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Row(
                       children: [
                         ElevatedButton(
+                          style: ButtonStyle(elevation: null),
                           onPressed: () {},
                           child: Text('Browse Files'),
                         ),

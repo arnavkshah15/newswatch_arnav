@@ -8,9 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String name = "";
   bool change = false;
-  final _formkey = GlobalKey<FormState>();
+  
   bool _obscureText = true;
 
   @override
@@ -19,7 +18,6 @@ class _LoginPageState extends State<LoginPage> {
         color: Colors.white,
         child: SingleChildScrollView(
           child: Form(
-            key: _formkey,
             child: Column(
               children: [
                 SizedBox(
@@ -102,13 +100,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      // ElevatedButton(
-                      //   child: Text("Login"),
-                      //   onPressed: () {
-                      //     Navigator.pushNamed(context, MyRoutes.HomeRoute);
-                      //   },
-                      //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                      // )
                       SizedBox(
                         height: 50,
                       ),

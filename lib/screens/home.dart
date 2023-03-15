@@ -125,7 +125,6 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, '/search');
                   },
-                  // tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
                 );
               },
             ),
@@ -147,9 +146,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                     child: InkWell(
-                      onTap: () {
-                        // Navigator.pushReplacementNamed(context, '/home');
-                      },
+                      onTap: () {},
                       child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
