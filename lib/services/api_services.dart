@@ -8,10 +8,10 @@ class ApiService {
 
   Future<List<Article>> getArticlesByCategory(String category) async {
     final queryParameters = {
-      'country': 'us',
+      'country': 'in',
       'source': 'bbc-news',
       'category': category,
-      'apiKey': '69e6e514545149d482118d36e07bed8c'
+      'apiKey': '01dbe9212cff4e8f988264a2b70d96bb'
     };
 
     final uri = Uri.https(endPointUrl, '/v2/top-headlines', queryParameters);

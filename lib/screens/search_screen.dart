@@ -22,7 +22,7 @@ class _SearchPageState extends State<SearchPage> {
   final client = http.Client();
 
   Future<List<Article>> _searchNews(String query) async {
-    final String apiKey = '69e6e514545149d482118d36e07bed8c';
+    final String apiKey = '01dbe9212cff4e8f988264a2b70d96bb';
     final String apiUrl =
         'https://newsapi.org/v2/everything?q=$query&apiKey=$apiKey';
 
@@ -141,7 +141,7 @@ class _SearchPageState extends State<SearchPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery.of(context).size.height * 7,
               child: _articles.isEmpty
                   ? Center(child: Text('No articles found'))
                   : FutureBuilder(
