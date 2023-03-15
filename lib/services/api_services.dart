@@ -8,7 +8,7 @@ class ApiService {
 
   Future<List<Article>> getArticlesByCategory(String category) async {
     final queryParameters = {
-      'country': 'in',
+      'country': 'us',
       'source': 'bbc-news',
       'category': category,
       'apiKey': '69e6e514545149d482118d36e07bed8c'
@@ -17,7 +17,7 @@ class ApiService {
     final uri = Uri.https(endPointUrl, '/v2/top-headlines', queryParameters);
     final response = await client.get(uri);
     Map<String, dynamic> json = jsonDecode(response.body);
-    List<dynamic> body = json['articles'] ?? [];
+    List<dynamic> body = json['articles'];
     List<Article> articles =
         await body.map((dynamic item) => Article.fromJson(item)).toList();
     return articles;
