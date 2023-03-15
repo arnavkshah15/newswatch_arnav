@@ -13,6 +13,10 @@ class ArticlePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [

@@ -101,6 +101,10 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pushReplacementNamed(context, '/home'),
+        ),
         backgroundColor: Colors.white,
         title: Row(
           children: [
@@ -120,13 +124,6 @@ class _SearchPageState extends State<SearchPage> {
                 if (query.isNotEmpty) {
                   setState(() {
                     _queries = query;
-                    Center(
-                      child: SizedBox(
-                        width: 48.0,
-                        height: 48.0,
-                        child: CircularProgressIndicator(),
-                      ),
-                    );
                   });
                   await _fetchData();
                 }
