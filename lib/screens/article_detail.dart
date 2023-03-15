@@ -11,11 +11,16 @@ class ArticlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(article.title ?? ''),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.bookmark_border)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.ios_share_sharp))
+        ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +34,6 @@ class ArticlePage extends StatelessWidget {
                           image: NetworkImage(article.urlToImage ??
                               'https://via.placeholder.com/150'),
                           fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(12.0),
                     ),
                   )
                 : Container(
@@ -46,27 +50,81 @@ class ArticlePage extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            Container(
-              padding: EdgeInsets.all(6.0),
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-              child: Text(
-                article.source?.name ?? 'Unknown',
-                style: TextStyle(
-                  color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                  article.title ?? '',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  Text("By "),
+                  Container(
+                    child: Text(
+                      article.author ?? 'Unknown',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              children: [
+                IconButton(
+                  alignment: Alignment.centerLeft,
+                  icon: Icon(
+                    Icons.comment,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {},
+                ),
+                Text("8 comments"),
+                SizedBox(width: MediaQuery.of(context).size.width / 25),
+                IconButton(
+                  alignment: Alignment.center,
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {},
+                ),
+                Text("34 Likes"),
+                SizedBox(width: MediaQuery.of(context).size.width / 25),
+                IconButton(
+                  alignment: Alignment.centerRight,
+                  icon: Icon(
+                    Icons.share,
+                    color: Colors.black,
+                  ),
+                  onPressed: () async {
+                    await Share.share('${article.title}\n\n${article.url}');
+                  },
+                ),
+                Text("Share")
+              ],
             ),
             SizedBox(
               height: 8.0,
             ),
-            Text(
-              article.description ?? '',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16.0,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                  article.description ?? '',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
               ),
             ),
           ],
