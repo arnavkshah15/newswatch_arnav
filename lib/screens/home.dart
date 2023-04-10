@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:newswatch_arnav/components/customListTile.dart';
+import 'package:newswatch_arnav/widgets/customListTile.dart';
 import 'package:newswatch_arnav/model/article_model.dart';
 import 'package:newswatch_arnav/screens/Ads_page.dart';
 import 'package:newswatch_arnav/screens/Poll_page.dart';
